@@ -103,7 +103,7 @@ button {
 }
 
 .highlight {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 /* Przyciski */

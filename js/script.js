@@ -74,11 +74,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Obsługa formularza kontaktowego
     const contactForm = document.getElementById('contactForm');
-    
+
+    // Obsługa dynamicznego dodawania lokalizacji
+    const locationsContainer = document.getElementById('locations-container');
+    const addLocationBtn = document.getElementById('add-location-btn');
+    let locationCount = 1;
+    if (addLocationBtn && locationsContainer) {
+        addLocationBtn.addEventListener('click', function() {
+            locationCount++;
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.id = `location-${locationCount}`;
+            newInput.name = 'locations[]';
+            newInput.className = 'form-input';
+            newInput.placeholder = `Wpisz lokalizację (np. Warszawa, ul. Przykładowa 1)`;
+            newInput.style.marginTop = '10px';
+            locationsContainer.appendChild(newInput);
+        });
+    }
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
             // Tutaj można dodać walidację formularza i wysyłkę danych
             // Dla przykładu pokazujemy komunikat o sukcesie
             alert('Dziękujemy za przesłanie formularza! Skontaktujemy się z Tobą wkrótce.');

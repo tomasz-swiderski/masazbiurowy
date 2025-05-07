@@ -508,6 +508,29 @@
                 <div class="pricing-plans" data-aos="fade-up" data-aos-delay="200">
                     <div class="pricing-plan">
                         <div class="plan-header">
+                            <h3>Plan Elastyczny</h3>
+                            <div class="plan-price">
+                                <span class="price-value">Zapytaj o cenę</span>
+                                <span class="price-period">/ sesja</span>
+                            </div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Realizacje jednorazowe</li>
+                                <li><i class="fas fa-check"></i> Opcja raz w miesiącu</li>
+                                <li><i class="fas fa-check"></i> Idealne na wydarzenia</li>
+                                <li><i class="fas fa-check"></i> Bez długoterminowych zobowiązań</li>
+                                <li><i class="fas fa-check"></i> Pełna elastyczność</li>
+                            </ul>
+                        </div>
+                        <div class="plan-cta">
+                            <button class="cta-secondary" onclick="scrollToContact()">Wybierz Plan</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-plan featured">
+                        <div class="plan-badge">Najczęstszy wybór</div>
+                        <div class="plan-header">
                             <h3>Plan Tygodniowy</h3>
                             <div class="plan-price">
                                 <span class="price-value">Zapytaj o cenę</span>
@@ -524,12 +547,11 @@
                             </ul>
                         </div>
                         <div class="plan-cta">
-                            <button class="cta-secondary" onclick="scrollToContact()">Wybierz Plan</button>
+                            <button class="cta-main" onclick="scrollToContact()">Wybierz Plan</button>
                         </div>
                     </div>
                     
-                    <div class="pricing-plan featured">
-                        <div class="plan-badge">Najpopularniejszy</div>
+                    <div class="pricing-plan">
                         <div class="plan-header">
                             <h3>Plan Dwutygodniowy</h3>
                             <div class="plan-price">
@@ -544,28 +566,6 @@
                                 <li><i class="fas fa-check"></i> Efektywne zarządzanie stresem</li>
                                 <li><i class="fas fa-check"></i> Elastyczne terminy</li>
                                 <li><i class="fas fa-check"></i> Raport z efektów</li>
-                            </ul>
-                        </div>
-                        <div class="plan-cta">
-                            <button class="cta-main" onclick="scrollToContact()">Wybierz Plan</button>
-                        </div>
-                    </div>
-                    
-                    <div class="pricing-plan">
-                        <div class="plan-header">
-                            <h3>Plan Elastyczny</h3>
-                            <div class="plan-price">
-                                <span class="price-value">Zapytaj o cenę</span>
-                                <span class="price-period">/ sesja</span>
-                            </div>
-                        </div>
-                        <div class="plan-features">
-                            <ul>
-                                <li><i class="fas fa-check"></i> Realizacje jednorazowe</li>
-                                <li><i class="fas fa-check"></i> Opcja raz w miesiącu</li>
-                                <li><i class="fas fa-check"></i> Idealne na wydarzenia</li>
-                                <li><i class="fas fa-check"></i> Bez długoterminowych zobowiązań</li>
-                                <li><i class="fas fa-check"></i> Pełna elastyczność</li>
                             </ul>
                         </div>
                         <div class="plan-cta">
@@ -625,8 +625,11 @@
                             <input type="text" id="name" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Nazwa firmy*</label>
-                            <input type="text" id="company" class="form-input" required>
+                            <label for="location-1">Lokalizacja*</label>
+<div id="locations-container">
+    <input type="text" id="location-1" name="locations[]" class="form-input" required placeholder="Wpisz lokalizację (np. Warszawa, ul. Przykładowa 1)">
+</div>
+<button type="button" class="cta-secondary" id="add-location-btn" style="margin-top:10px;">Dodaj lokalizację</button>
                         </div>
                         <div class="form-group">
                             <label for="email">Email służbowy*</label>
@@ -637,16 +640,25 @@
                             <input type="tel" id="phone" class="form-input">
                         </div>
                         <div class="form-group">
-                            <label for="employees">Liczba pracowników</label>
-                            <select id="employees" class="form-input">
-                                <option value="">Wybierz...</option>
-                                <option value="1-10">1-10</option>
-                                <option value="11-50">11-50</option>
-                                <option value="51-200">51-200</option>
-                                <option value="201-500">201-500</option>
-                                <option value="500+">500+</option>
-                            </select>
-                        </div>
+    <label for="plan">Wybierz plan*</label>
+    <select id="plan" class="form-input" required>
+        <option value="">Wybierz...</option>
+        <option value="elastyczny">Plan Elastyczny</option>
+        <option value="tygodniowy">Plan Tygodniowy (najczęstszy wybór)</option>
+        <option value="dwutygodniowy">Plan Dwutygodniowy</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="employees">Liczba pracowników</label>
+    <select id="employees" class="form-input">
+        <option value="">Wybierz...</option>
+        <option value="1-10">1-10</option>
+        <option value="11-50">11-50</option>
+        <option value="51-200">51-200</option>
+        <option value="201-500">201-500</option>
+        <option value="500+">500+</option>
+    </select>
+</div>
                         <div class="form-group full-width">
                             <label for="message">Wiadomość / Pytanie</label>
                             <textarea id="message" class="form-input" rows="4"></textarea>
