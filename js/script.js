@@ -125,19 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', function() {
         let current = '';
-        
+        let found = false;
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 120; 
             const sectionHeight = section.offsetHeight;
-            
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            if (!found && window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
+                found = true;
             }
         });
-        
         navItems.forEach(item => {
             item.classList.remove('active');
-            if (item.getAttribute('href').includes(current)) {
+            if (current && item.getAttribute('href').includes(current)) {
                 item.classList.add('active');
             }
         });
