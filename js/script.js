@@ -11,30 +11,65 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obsługa menu mobilnego
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.querySelector('.nav-links');
+    // Dodajemy backdrop do body (jeśli nie istnieje)
+    let menuBackdrop = document.getElementById('menuBackdrop');
+    if (!menuBackdrop) {
+        menuBackdrop = document.createElement('div');
+        menuBackdrop.id = 'menuBackdrop';
+        menuBackdrop.style.display = 'none';
+        document.body.appendChild(menuBackdrop);
+    }
     
+    function openMobileMenu() {
+        menuToggle.classList.add('active');
+        navLinks.classList.add('active');
+        document.body.classList.add('menu-open');
+        menuBackdrop.style.display = 'block';
+        menuBackdrop.style.position = 'fixed';
+        menuBackdrop.style.top = '0';
+        menuBackdrop.style.left = '0';
+        menuBackdrop.style.width = '100vw';
+        menuBackdrop.style.height = '100vh';
+        menuBackdrop.style.background = 'rgba(0,0,0,0.25)';
+        menuBackdrop.style.zIndex = '9998';
+    }
+    function closeMobileMenu() {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        menuBackdrop.style.display = 'none';
+    }
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
             if (navLinks.classList.contains('active')) {
-                document.body.classList.add('menu-open');
+                closeMobileMenu();
             } else {
-                document.body.classList.remove('menu-open');
+                openMobileMenu();
             }
         });
     }
+    menuBackdrop.addEventListener('click', closeMobileMenu);
     
     // Zamykanie menu po kliknięciu w link
     const mobileLinks = document.querySelectorAll('.nav-links .nav-link, .nav-links .cta-nav');
     
+    function closeMobileMenu() {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        menuBackdrop.style.display = 'none';
+    }
     mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (menuToggle && menuToggle.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-        });
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Zamykanie menu przy zmianie rozmiaru okna (np. obrót telefonu, powrót do desktopu)
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992) {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
     });
     
     // Obsługa FAQ - rozwijanie/zwijanie odpowiedzi
