@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.classList.remove('menu-open');
+            }
         });
     }
     
@@ -27,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (menuToggle && menuToggle.classList.contains('active')) {
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
         });
     });
