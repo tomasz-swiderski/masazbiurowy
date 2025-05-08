@@ -92,26 +92,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Obsługa przełączania zakładek w sekcji korzyści
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-    
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Usuń klasę active ze wszystkich przycisków i paneli
-            tabBtns.forEach(btn => btn.classList.remove('active'));
-            tabPanels.forEach(panel => panel.classList.remove('active'));
-            
-            // Dodaj klasę active do klikniętego przycisku
-            this.classList.add('active');
-            
-            // Aktywuj odpowiedni panel
-            const tabId = this.getAttribute('data-tab');
-            const targetPanel = document.getElementById(tabId + '-panel');
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-            }
+    // Obsługa przełączania zakładek w sekcji korzyści
+    const korzysciTabs = document.querySelector('.benefits-tabs');
+    if (korzysciTabs) {
+        const tabBtns = korzysciTabs.querySelectorAll('.tab-btn');
+        const tabPanels = korzysciTabs.querySelectorAll('.tab-panel');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                const targetPanel = document.getElementById(tabId + '-panel');
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
         });
-    });
+    }
+
+    // Obsługa przełączania tabów w sekcji "solution"
+    const solutionTabs = document.querySelector('.solution-tabs');
+    if (solutionTabs) {
+        const tabBtns = solutionTabs.querySelectorAll('.tab-btn');
+        const tabPanels = solutionTabs.querySelectorAll('.tab-panel');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                const targetPanel = document.getElementById(tabId + '-panel');
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    }
     
     // Obsługa formularza kontaktowego
     const contactForm = document.getElementById('contactForm');

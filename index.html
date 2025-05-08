@@ -103,43 +103,82 @@
         <section id="solution" class="solution section-padding bg-light">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">Skuteczne Rozwiązanie na Wyciągnięcie Ręki: Profesjonalny Masaż w Miejscu Pracy</h2>
-                <div class="solution-content">
-                    <div class="solution-image" data-aos="fade-right">
-                        <img src="Public/1.png" alt="Profesjonalny masaż biurowy">
+                <div class="solution-tabs" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="chair-massage" type="button">Masaż na krześle</button>
+                        <button class="tab-btn" data-tab="table-massage" type="button">Masaż na stole</button>
                     </div>
-                    <div class="solution-text" data-aos="fade-left">
-                        <p class="section-intro">Masaż biurowy to nie luksus, to strategiczna inwestycja w zdrowie i efektywność Twojego zespołu.</p>
-                        <div class="solution-features">
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <h3>Szybki i efektywny</h3>
-                                    <p>Sesje 15-20 minutowe, wykonywane w ubraniu, na specjalnym krześle do masażu</p>
+                    <div class="tab-panels">
+                        <!-- Panel: Masaż na krześle -->
+                        <div class="tab-panel active" id="chair-massage-panel">
+                            <div class="solution-content">
+                                <div class="solution-image">
+                                    <img src="Public/Masaż biurowy na krześle.svg" alt="Masaż na krześle w biurze">
                                 </div>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <h3>Natychmiastowe efekty</h3>
-                                    <p>Redukcja napięcia, poprawa krążenia i zwiększenie poziomu energii już po pierwszej sesji</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <h3>Minimalnie inwazyjny</h3>
-                                    <p>Nie wymaga specjalnego pomieszczenia ani przebierania się pracowników</p>
-                                </div>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <div>
-                                    <h3>Elastyczny i dopasowany</h3>
-                                    <p>Dostosowany do harmonogramu i potrzeb Twojej firmy, bez zakłócania pracy</p>
+                                <div class="solution-text">
+                                    <p class="section-intro">Masaż biurowy na krześle to szybka i wygodna forma relaksu w miejscu pracy, nie wymagająca przebierania się ani specjalnych warunków.</p>
+                                    <div class="solution-features">
+                                        <div class="feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h3>Szybki i efektywny</h3>
+                                                <p>Sesje 15-20 minutowe, wykonywane na specjalnym krześle, w ubraniu.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h3>Natychmiastowa ulga</h3>
+                                                <p>Redukcja napięcia i stresu już po kilku minutach masażu.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h3>Brak konieczności przebierania się</h3>
+                                                <p>Masaż wykonywany w ubraniu, bez potrzeby korzystania z osobnego pomieszczenia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="cta-secondary" onclick="scrollToContact()">Dowiedz się więcej</button>
                                 </div>
                             </div>
                         </div>
-                        <button class="cta-secondary" onclick="scrollToContact()">Dowiedz się więcej</button>
+                        <!-- Panel: Masaż na stole -->
+                        <div class="tab-panel" id="table-massage-panel">
+                            <div class="solution-content">
+                                <div class="solution-image">
+                                    <img src="Public/Masaż biurowy na stole.svg" alt="Masaż na stole w biurze">
+                                </div>
+                                <div class="solution-text">
+                                    <p class="section-intro">Masaż biurowy na stole to głębsza forma relaksu, pozwalająca na pełniejsze rozluźnienie mięśni – idealna dla pracowników potrzebujących intensywniejszego wsparcia.</p>
+                                    <div class="solution-features">
+                                        <div class="feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h3>Intensywniejszy masaż</h3>
+                                                <p>Sesje 20-30 minutowe na profesjonalnym stole do masażu, zapewniające głębsze rozluźnienie mięśni.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h3>Pełen komfort</h3>
+                                                <p>Możliwość korzystania z ręcznika i przebrania się dla większej wygody, jeśli pracownik tego potrzebuje.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h3>Dedykowany relaks</h3>
+                                                <p>Idealny wybór dla osób z większym napięciem mięśniowym lub potrzebą głębszej regeneracji.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="cta-secondary" onclick="scrollToContact()">Dowiedz się więcej</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
